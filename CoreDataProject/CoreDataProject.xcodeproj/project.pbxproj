@@ -13,6 +13,10 @@
 		557965E425A3A8D60003CD72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 557965E325A3A8D60003CD72 /* Preview Assets.xcassets */; };
 		557965E625A3A8D60003CD72 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557965E525A3A8D60003CD72 /* Persistence.swift */; };
 		557965E925A3A8D60003CD72 /* CoreDataProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 557965E725A3A8D60003CD72 /* CoreDataProject.xcdatamodeld */; };
+		557965F325A41D7C0003CD72 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557965F125A41D7C0003CD72 /* Movie+CoreDataClass.swift */; };
+		557965F425A41D7C0003CD72 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557965F225A41D7C0003CD72 /* Movie+CoreDataProperties.swift */; };
+		557965F725A41EF10003CD72 /* ConditionalManagedSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557965F625A41EF10003CD72 /* ConditionalManagedSave.swift */; };
+		557965FA25A4207D0003CD72 /* ContraintExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557965F925A4207D0003CD72 /* ContraintExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		557965E525A3A8D60003CD72 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		557965E825A3A8D60003CD72 /* CoreDataProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataProject.xcdatamodel; sourceTree = "<group>"; };
 		557965EA25A3A8D60003CD72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		557965F125A41D7C0003CD72 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		557965F225A41D7C0003CD72 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		557965F625A41EF10003CD72 /* ConditionalManagedSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalManagedSave.swift; sourceTree = "<group>"; };
+		557965F925A4207D0003CD72 /* ContraintExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContraintExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,8 @@
 		557965DB25A3A8D20003CD72 /* CoreDataProject */ = {
 			isa = PBXGroup;
 			children = (
+				557965F125A41D7C0003CD72 /* Movie+CoreDataClass.swift */,
+				557965F225A41D7C0003CD72 /* Movie+CoreDataProperties.swift */,
 				557965DC25A3A8D20003CD72 /* CoreDataProjectApp.swift */,
 				557965DE25A3A8D20003CD72 /* ContentView.swift */,
 				557965E025A3A8D60003CD72 /* Assets.xcassets */,
@@ -63,6 +73,8 @@
 				557965EA25A3A8D60003CD72 /* Info.plist */,
 				557965E725A3A8D60003CD72 /* CoreDataProject.xcdatamodeld */,
 				557965E225A3A8D60003CD72 /* Preview Content */,
+				557965F625A41EF10003CD72 /* ConditionalManagedSave.swift */,
+				557965F925A4207D0003CD72 /* ContraintExampleView.swift */,
 			);
 			path = CoreDataProject;
 			sourceTree = "<group>";
@@ -147,6 +159,10 @@
 				557965E625A3A8D60003CD72 /* Persistence.swift in Sources */,
 				557965DF25A3A8D20003CD72 /* ContentView.swift in Sources */,
 				557965E925A3A8D60003CD72 /* CoreDataProject.xcdatamodeld in Sources */,
+				557965F725A41EF10003CD72 /* ConditionalManagedSave.swift in Sources */,
+				557965F325A41D7C0003CD72 /* Movie+CoreDataClass.swift in Sources */,
+				557965F425A41D7C0003CD72 /* Movie+CoreDataProperties.swift in Sources */,
+				557965FA25A4207D0003CD72 /* ContraintExampleView.swift in Sources */,
 				557965DD25A3A8D20003CD72 /* CoreDataProjectApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
