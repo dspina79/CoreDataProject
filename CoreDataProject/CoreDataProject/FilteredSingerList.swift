@@ -6,15 +6,21 @@
 //
 
 import SwiftUI
+import CoreData
 
-struct FilteredSingerList: View {
+struct FilteredSingerList<T: NSManagedObject, Content: View>: View {
+    var fetchRequest: FetchRequest<T>
+    let content: (T) -> Content
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(fetchRequest.wrappedValue, id: \.self) { item in
+            self.content(item)
+        }
+    }
+    
+    init(filterKey: String, filterValue: String, @ViewBuilder content: @escaping (T) -> Content) {
+        fetchRequest = FetchRequest<T>(entity: T.entity(), sortDescriptors: [], predicate: NSPredicate(format: "%K BEGINSWITH %@", filterKey, filterValue))
+        self.content = content
     }
 }
 
-struct FilteredSingerList_Previews: PreviewProvider {
-    static var previews: some View {
-        FilteredSingerList()
-    }
-}

@@ -13,7 +13,10 @@ struct SingerView: View {
     
     var body: some View {
         VStack {
-            // here the list will go
+            FilteredSingerList(filterKey: "lastName", filterValue: filterValue) {
+                (singer: Singer) in
+                Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+            }
             
             Button("Add Data") {
                 let singer1 = Singer(context: self.moc)
