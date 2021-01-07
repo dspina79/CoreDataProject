@@ -12,14 +12,38 @@ struct SingerView: View {
     @State var filterValue = "A"
     @State private var newFirstName: String = ""
     @State private var newLastName: String = ""
-
+    @State private var predicateType = 0
+    let predicateTypes = ["BEGINSWITH", "CONTAINS", "ENDSWITH"]
+    
     let sortValues: [NSSortDescriptor]  = [NSSortDescriptor(key: "lastName", ascending: true)]
+    
+    private var predicateValueType: PredicateValues {
+        var predType = PredicateValues.beginsWith(filterValue)
+        switch predicateTypes[predicateType] {
+        case "CONTAINS" :
+            predType = PredicateValues.contains(filterValue)
+        case "ENDSWITH":
+            predType = PredicateValues.endsWith(filterValue)
+        default:
+            predType = PredicateValues.beginsWith(filterValue)
+        }
+        return predType
+    }
+    
     var body: some View {
         VStack {
-            FilteredSingerList(filterKey: "lastName", filterValue: filterValue, sorted: sortValues) {
+            Picker("Predicate", selection: $predicateType) {
+                ForEach(0..<predicateTypes.count) { i in
+                    Text("\(predicateTypes[i])")
+                }
+            }
+            
+            FilteredSingerList(filterKey: "lastName", predicateValueKey: predicateValueType, sorted: sortValues) {
                 (singer: Singer) in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
             }
+            
+                
             
             Form {
                 Section {
