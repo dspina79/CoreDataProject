@@ -10,12 +10,35 @@ import SwiftUI
 struct SingerView: View {
     @Environment(\.managedObjectContext) var moc
     @State var filterValue = "A"
-    
+    @State private var newFirstName: String = ""
+    @State private var newLastName: String = ""
+
+    let sortValues: [NSSortDescriptor]  = [NSSortDescriptor(key: "lastName", ascending: true)]
     var body: some View {
         VStack {
-            FilteredSingerList(filterKey: "lastName", filterValue: filterValue) {
+            FilteredSingerList(filterKey: "lastName", filterValue: filterValue, sorted: sortValues) {
                 (singer: Singer) in
                 Text("\(singer.wrappedFirstName) \(singer.wrappedLastName)")
+            }
+            
+            Form {
+                Section {
+                    TextField("First Name", text: $newFirstName)
+                    TextField("Last Name", text: $newLastName)
+                }
+                Section {
+                    Button("Add New Person") {
+                        let newSinger = Singer(context: moc)
+                        newSinger.firstName = newFirstName
+                        newSinger.lastName = newLastName
+                        
+                        if self.moc.hasChanges {
+                            try? self.moc.save()
+                            newFirstName = ""
+                            newLastName = ""
+                        }
+                    }
+                }
             }
             
             Button("Add Data") {
